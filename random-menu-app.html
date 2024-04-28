@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Random-Menu</title>
+		<link
+			rel="shortcut icon"
+			href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQyBAyKHGrtZKOQZDFD--xh2tWrlBiCjvnQ&s"
+			type="image/x-icon"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+		/>
+
+		<!-- the section of own style code -->
+		<style>
+			/* base setting */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+					Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+					sans-serif;
+				font-size: medium;
+				outline: none;
+				text-decoration: none;
+			}
+
+			/* style setting */
+			header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				padding: 3vw;
+			}
+
+			header .parent span {
+				width: 15vw;
+				line-height: 6vw;
+
+				margin: 1vw;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="parent">
+				<span class="badge text-bg-primary rounded-pill" id="menuItem"
+					>yes</span
+				>
+			</div>
+			<button
+				type="button"
+				class="btn btn-primary"
+				data-bs-toggle="modal"
+				data-bs-target="#modal"
+			>
+				Add Food
+			</button>
+			<!-- modal component -->
+			<div
+				class="modal fade"
+				id="modal"
+				tabindex="-1"
+				aria-labelledby="modal"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="modal">
+								What you prefer to eat TODAY
+							</h1>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="mb-3">
+									<label for="recipient-name" class="col-form-label"
+										>Group of Food</label
+									>
+									<input type="text" class="form-control" id="foodGroup" />
+								</div>
+								<div class="mb-3">
+									<label for="message-text" class="col-form-label"
+										>Name of Food</label
+									>
+									<textarea class="form-control" id="foodName"></textarea>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button
+								type="button"
+								class="btn btn-secondary"
+								data-bs-dismiss="modal"
+							>
+								Close
+							</button>
+							<button type="button" class="btn btn-primary" id="submit">
+								Submit
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main></main>
+		<footer></footer>
+	</body>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		// the section of own logic code
+		window.addEventListener('DOMContentLoaded', (event) => {
+			// const menuItem = document.querySelector('#menuItem')
+			const foodName = document.querySelector('#foodName')
+			const foodGroup = document.querySelector('#foodGroup')
+
+			const submit = document.querySelector('#submit')
+
+			// init data
+			initItem()
+
+			// Event Listener
+			submit.addEventListener('click', (event) => {
+				// do not use innerHTML or textContent
+				const newGroup = foodGroup.value
+				const newItem = foodName.value
+
+				addMenuItem(newGroup, newItem, true)
+			})
+		})
+
+		// functionalities own made
+		// load menuItem from localStorage
+		const loadItem = () => JSON.parse(localStorage.getItem('menuItem') || [])
+		const initItem = () => {
+			const dataArr = loadItem()
+			// only display foodName on the screen
+			dataArr.forEach((element) => {
+				addMenuItem(element.item, null, false)
+			})
+		}
+
+		// add menuItem to current node and make it storage in local
+		const addMenuItem = (menuItem, itemGroup, isStorage) => {
+			const newItem = document.createElement('span')
+
+			// add the inner text and style to the newly created node
+			newItem.innerHTML = menuItem
+
+			// add the newly created element and its content into the DOM
+			const parentItem = document.querySelector('.parent')
+			parentItem.appendChild(newItem)
+			addBaseStyleForItem(newItem)
+
+			// control storage if isStorage
+			if (isStorage) storageLocal(menuItem, itemGroup)
+		}
+
+		const storageLocal = (menuItem, itemGroup) => {
+			const existedItem = JSON.parse(localStorage.getItem('menuItem')) || []
+
+			// create a new array with the additional element
+			const newData = {
+				group: itemGroup,
+				item: menuItem,
+			}
+			const newMenuItem = [...existedItem, newData]
+
+			// Step 3: Store the updated data back in localStorage
+			localStorage.setItem('menuItem', JSON.stringify(newMenuItem))
+		}
+
+		// init menuItem basic style from preset class of bootstrap5
+		const addBaseStyleForItem = (newItem) => {
+			newItem.classList.add('badge')
+			newItem.classList.add('text-bg-primary')
+			newItem.classList.add('rounded-pill')
+		}
+
+		// random data
+		const randomItem = () => {}
+
+		const getRandomNumber = (min, max) => {
+			// use the crypto.getRandomValues() method for better randomness, Which is better than build-in method math.random
+			const randomBytes = new Uint32Array(1)
+			crypto.getRandomValues(randomBytes)
+
+			// map the random bytes to the desired range
+			return (
+				Math.floor((randomBytes[0] / (0xffffffff + 1)) * (max - min + 1)) + min
+			)
+		}
+	</script>
+</html>
