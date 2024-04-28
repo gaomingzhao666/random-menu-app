@@ -27,15 +27,11 @@
 <details open>
   <summary>Directory</summary>
   <ul>
-    <li><a href="#Introduction of Project">Introduction of Project</a> </li>
-    <li><a href="#Build With">Build With</a></li>
-    <li><a href="#Environment Requirement">Environment Requirement</a></li>
-    <li><a href="#Installation and Usage - Server">Installation and Usage - Server</a></li>
-    <li><a href="#Installation and Usage - Frontend">Installation and Usage - Frontend</a></li>
-    <li><a href="#Resolve CORS Problem">Resolve CORS Problem</a></li>
-    <li><a href="#Contributor">Contributor</a></li>
-    <li><a href="#UI Design Reference">UI design Reference</a></li>
-    <li><a href="#LICENSE">LICENSE</a></li>
+    <li><a href="##Introduction of Project">Introduction of Project</a> </li>
+    <li><a href="##Build With">Build With</a></li>
+    <li><a href="##Environment Requirement">Environment Requirement</a></li>
+    <li><a href="##Contributor">Contributor</a></li>
+    <li><a href="##LICENSE">LICENSE</a></li>
   </ul>
 </details>
 
@@ -43,7 +39,7 @@
 
 ## Introduction of Project
 
-<!-- 项目图片部分 -->
+<!-- PROJECT SCREENSHOT -->
 
 Random food menu from local storage on the web browser, Integrate only HTML/CSS/Native ECMAScript in one file, Data storage in localStorage AND modularize functionalities.
 
