@@ -41,7 +41,7 @@
 
 <!-- PROJECT SCREENSHOT -->
 
-Random food menu from local storage on the web browser, Integrate only HTML/CSS/Native ECMAScript in one file, Data storage in localStorage AND modularize functionalities.
+What do you prefer to eat today, if you hard choice try Random-Food-Menu, which is a web application that integrates only HTML/CSS/Native ECMAScript in one file and all data storage in localStorage.
 
 <p align="right"> (<a href="#readme-top">back to top</a>)</p>
 
@@ -51,6 +51,10 @@ Random food menu from local storage on the web browser, Integrate only HTML/CSS/
 - CSS
 - ECMAScript
 - Bootstrap5
+
+## Assistant
+
+- Claude3 haiku
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,7 +82,7 @@ gaomingzhao666/random-menu-app is licensed under the Apache License 2.0. A permi
 
 [stars-shield]: https://img.shields.io/github/stars/gaomingzhao666/random-menu-app?style=for-the-badge
 [stars-url]: https://github.com/gaomingzhao666/random-menu-app/stargazers
-[license-shield]: https://img.shields.io/badge/license-MIT-green
+[license-shield]: https://img.shields.io/badge/license-MIT-green?style=for-the-badge
 [license-url]: https://github.com/gaomingzhao666/random-menu-app/blob/main/LICENSE
 [release-shield]: https://img.shields.io/github/v/release/gaomingzhao666/random-menu-app?style=for-the-badge
 [release-url]: https://github.com/gaomingzhao666/random-menu-app/releases/tag
