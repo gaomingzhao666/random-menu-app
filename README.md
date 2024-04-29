@@ -78,7 +78,7 @@ gaomingzhao666/random-menu-app is licensed under the Apache License 2.0. A permi
 
 [stars-shield]: https://img.shields.io/github/stars/gaomingzhao666/random-menu-app?style=for-the-badge
 [stars-url]: https://github.com/gaomingzhao666/random-menu-app/stargazers
-[license-shield]: https://img.shields.io/hexpm/l/apa?style=for-the-badge
+[license-shield]: https://img.shields.io/gaomingzhao666/random-menu-app
 [license-url]: https://github.com/gaomingzhao666/random-menu-app/blob/main/LICENSE
 [release-shield]: https://img.shields.io/github/v/release/gaomingzhao666/random-menu-app?style=for-the-badge
 [release-url]: https://github.com/gaomingzhao666/random-menu-app/releases/tag
