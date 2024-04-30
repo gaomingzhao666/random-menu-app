@@ -9,10 +9,6 @@
 			href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIQyBAyKHGrtZKOQZDFD--xh2tWrlBiCjvnQ&s"
 			type="image/x-icon"
 		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-		/>
 
 		<!-- the section of own style code -->
 		<style>
@@ -29,45 +25,269 @@
 				text-decoration: none;
 			}
 
-			/* style setting */
-			header .parent span {
-				width: 15vw;
-				line-height: 6vw;
-
-				margin: 1vw;
-			}
+			/* nav bar component style */
 			header .nav-bar {
-				background-color: #999999;
+				color: #000;
+				background-color: #ffffff;
 
 				display: flex;
 				justify-content: space-evenly;
 				align-items: center;
 
-				padding: 2.13vw 0;
+				padding: 16px 0;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 				border-radius: 30px;
-				margin: 3.2vw;
+				margin: 24px;
+			}
+			@media (min-width: 888px) {
+				header .nav-bar a:hover {
+					background-color: rgb(200, 200, 200);
+				}
 			}
 
 			header .nav-bar a {
-				color: white;
+				color: #000;
 				text-decoration: none;
+				border-radius: 50px;
 				padding: 2.13vw 3.2vw;
+
+				transition: all 0.3s ease;
 			}
-			.alert {
+
+			.button {
+				color: #000;
+				background-color: white;
+				text-decoration: none;
+				border: none;
+				border-radius: 50px;
+				padding: 2.13vw 3.2vw;
+
+				transition: all 0.3s ease;
+			}
+			@media (min-width: 888px) {
+				.button:hover {
+					background-color: rgb(200, 200, 200);
+				}
+			}
+
+			/* modal component style */
+			.modal {
 				display: none;
+				position: fixed;
+				z-index: 1;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgba(0, 0, 0, 0.4);
+				align-content: center;
+			}
+
+			.modal-content {
+				background-color: #fefefe;
+				margin: 15% auto;
+				padding: 20px;
+				border: 1px solid #888;
+				width: 80%;
+				max-width: 600px;
+				border-radius: 4px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+			}
+
+			.modal-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding-bottom: 1rem;
+				border: none;
+			}
+
+			.modal-title {
+				font-size: 1.5rem;
+				font-weight: 500;
+			}
+
+			.close-button {
+				font-size: 1.5rem;
+				font-weight: bold;
+				color: #aaa;
+				cursor: pointer;
+			}
+
+			.close-button:hover,
+			.close-button:focus {
+				color: #000;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			.modal-body {
+				padding: 1rem 0;
+			}
+
+			.modal-footer {
+				display: flex;
+				justify-content: flex-end;
+				padding-top: 1rem;
+				border: none;
+			}
+			.content {
+				padding: 32px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			/* card component style */
+			.card {
+				background-color: #fff;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+				padding: 32px;
+				margin: 24px 10px;
+				border-radius: 30px;
+				text-align: center;
+				max-width: 400px;
+				width: 100%;
+			}
+
+			.card h2 {
+				margin: 0;
+				margin-bottom: 20px;
+			}
+
+			.card button {
+				background-color: #2196f3;
+				color: #fff;
+				border: none;
+				padding: 12px 24px;
+				border-radius: 30px;
+				cursor: pointer;
+				font-size: 16px;
+			}
+			.material-input-container {
+				position: relative;
+				margin-bottom: 24px;
+			}
+
+			.material-input {
+				font-size: 16px;
+				padding: 12px 0 8px;
+				border: none;
+				border-bottom: 1px solid #ccc;
+				outline: none;
+				width: 100%;
+				background-color: transparent;
+				transition: border-color 0.3s ease, transform 0.3s ease;
+			}
+
+			.material-input:focus {
+				border-color: #3f51b5;
+			}
+
+			.material-label {
+				position: absolute;
+				top: 12px;
+				left: 0;
+				font-size: 16px;
+				color: #999;
+				pointer-events: none;
+				transform-origin: 0 0;
+				transition: transform 0.3s ease, color 0.3s ease;
+			}
+
+			.material-input:focus + .material-label,
+			.material-input:not(:placeholder-shown) + .material-label {
+				transform: translateY(-18px) scale(0.75);
+				color: #3f51b5;
+			}
+
+			#parent {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: center;
+			}
+			/* tag component style */
+			.tag {
+				display: inline-flex;
+				justify-content: space-around;
+				align-items: center;
+
+				width: 43vw;
+				padding: 12px 16px;
+				margin: 12px;
+				border-radius: 20px;
+				font-size: 16px;
+				color: #333;
+				background-color: #f0f0f0;
+				transition: all 0.3s ease;
+			}
+
+			.tag.primary {
+				color: #fff;
+				background-color: #007bff;
+			}
+
+			.tag.secondary {
+				color: #fff;
+				background-color: #6c757d;
+			}
+
+			.tag.default {
+				color: #333;
+				background-color: #f0f0f0;
+			}
+
+			.tag .delete-btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: right;
+
+				width: 32px;
+				height: 32px;
+				margin-left: 12px;
+				border-radius: 50%;
+				font-size: 18px;
+				color: #333;
+				background-color: transparent;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			.tag .delete-btn:hover {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+
+			.tag .delete-btn:active {
+				transform: scale(0.8);
+			}
+
+			@media (min-width: 888px) {
+				.tag {
+					display: inline-flex;
+					justify-content: space-around;
+					align-items: center;
+
+					width: fit-content;
+					padding: 12px 16px;
+					margin: 12px;
+					border-radius: 20px;
+					font-size: 16px;
+					color: #333;
+					background-color: #f0f0f0;
+					transition: all 0.3s ease;
+				}
 			}
 		</style>
 	</head>
 
 	<body>
-		<!-- display it if device OS not suitable -->
-		<!-- <div class="alert alert-danger" role="alert">
-			Your device is not support entirely in here!
-		</div> -->
 		<header>
 			<nav class="nav-bar">
 				<a href="https://github.com/gaomingzhao666/random-menu-app">
 					<!-- github logo -->
+
 					<svg
 						height="32"
 						aria-hidden="true"
@@ -82,128 +302,180 @@
 						></path>
 					</svg>
 				</a>
-				<a href="#">Nano</a>
-				<a href="#">Setting</a>
-				<a href="#" data-bs-toggle="modal" data-bs-target="#modal">Add Food</a>
+				<button class="button">Nano</button>
+				<!-- <a href="#">Nano</a> -->
+				<button class="button">Setting</button>
+				<button class="button" id="openModal">Add Food</button>
 			</nav>
 		</header>
 		<main>
-			<div class="parent">
-				<!-- food menuItem position -->
+			<div class="content">
+				<div class="card">
+					<h2>Click the button to get a random food name</h2>
+					<button id="randomFoodButton">Get Random Food</button>
+					<p id="randomFood"></p>
+				</div>
 			</div>
 		</main>
 		<footer>
-			<button type="button" class="btn btn-primary" id="isDark">isDark</button>
+			<h1 style="text-align: center; font-size: larger; margin-bottom: 12px">
+				Added Foods
+			</h1>
+			<div id="parent">
+				<!-- Tag component -->
+			</div>
 		</footer>
 
-		<!-- modal component -->
-		<div
-			class="modal fade"
-			id="modal"
-			tabindex="-1"
-			aria-labelledby="modal"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="modal">
-							What you prefer to eat TODAY
-						</h1>
-						<button
-							type="button"
-							class="btn-close"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						></button>
+		<!-- AI generated modal component -->
+		<div class="modal" id="myModal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title">Add Food Menu</h2>
+					<span class="close-button" id="closeModal">&times;</span>
+				</div>
+				<div class="modal-body">
+					<div class="material-input-container">
+						<input
+							type="text"
+							class="material-input"
+							id="foodGroup"
+							placeholder=" "
+						/>
+						<label for="materialInput" class="material-label">Food Group</label>
 					</div>
-					<div class="modal-body">
-						<form>
-							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label"
-									>Group of Food</label
-								>
-								<input type="text" class="form-control" id="foodGroup" />
-							</div>
-							<div class="mb-3">
-								<label for="message-text" class="col-form-label"
-									>Name of Food</label
-								>
-								<textarea class="form-control" id="foodName"></textarea>
-							</div>
-						</form>
+					<div class="material-input-container">
+						<input
+							type="text"
+							class="material-input"
+							id="foodName"
+							placeholder=" "
+						/>
+						<label for="materialInput" class="material-label">Food Name</label>
 					</div>
-					<div class="modal-footer">
-						<button
-							type="button"
-							class="btn btn-secondary"
-							data-bs-dismiss="modal"
-						>
-							Close
-						</button>
-						<button
-							type="button"
-							class="btn btn-primary"
-							id="submit"
-							data-bs-dismiss="modal"
-						>
-							Submit
-						</button>
-					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="button" id="confirmModal">Submit</button>
 				</div>
 			</div>
 		</div>
 	</body>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-	<!-- judge device whether suitable (only mobile) -->
+	<!-- AI generated modal component logic -->
 	<script>
-		const judgeOS = () => {
-			const { userAgent, platform } = window.navigator
-			const isMac = /Mac|iPod|iPhone|iPad/.test(platform)
-			const isIOS = /iPhone|iPad|iPod/.test(platform)
-			const isWindows = /Win/.test(platform)
-			const isAndroid = /Android/.test(userAgent)
-			const isLinux = /Linux/.test(platform)
+		class Modal {
+			constructor() {
+				this.modal = document.getElementById('myModal')
+				this.openButton = document.getElementById('openModal')
+				this.closeButton = document.getElementById('closeModal')
+				this.confirmButton = document.getElementById('confirmModal')
 
-			if (!isIOS || !isAndroid) {
-				const alert = document.querySelector('.alert')
+				this.openButton.addEventListener('click', this.open.bind(this))
+				this.closeButton.addEventListener('click', this.close.bind(this))
+				this.confirmButton.addEventListener('click', this.close.bind(this))
+			}
 
-				// make alert component display
-				alert.style.display = 'block'
+			open() {
+				this.modal.style.display = 'block'
+			}
+
+			close() {
+				this.modal.style.display = 'none'
 			}
 		}
-		judgeOS()
+
+		const modal = new Modal()
 	</script>
 
-	<!-- dark mode -->
+	<!-- AI generated input component logic -->
 	<script>
-		window.addEventListener('DOMContentLoaded', (event) => {
-			const html = document.querySelector('html')
-			const isDark = document.querySelector('#isDark')
-
-			isDark.addEventListener('click', (event) => {
-				changeDarkMode()
-			})
-
-			const changeDarkMode = () => {
-				const nodeValue = html.getAttribute('data-bs-theme')
-
-				if (nodeValue !== 'dark') html.setAttribute('data-bs-theme', 'dark')
-				else html.setAttribute('data-bs-theme', 'light')
+		class MaterialInput extends HTMLElement {
+			constructor() {
+				super()
+				this.inputElement = null
+				this.labelElement = null
 			}
-		})
+
+			connectedCallback() {
+				this.inputElement = this.querySelector('.material-input')
+				this.labelElement = this.querySelector('.material-label')
+
+				this.inputElement.addEventListener(
+					'input',
+					this.handleInputChange.bind(this)
+				)
+				this.inputElement.addEventListener('focus', this.handleFocus.bind(this))
+				this.inputElement.addEventListener('blur', this.handleBlur.bind(this))
+			}
+
+			handleInputChange() {
+				this.toggleLabelTransform()
+			}
+
+			handleFocus() {
+				this.toggleLabelTransform()
+				this.inputElement.classList.add('material-input--focused')
+			}
+
+			handleBlur() {
+				this.toggleLabelTransform()
+				this.inputElement.classList.remove('material-input--focused')
+			}
+
+			toggleLabelTransform() {
+				if (this.inputElement.value.trim() !== '') {
+					this.labelElement.classList.add('material-label--active')
+				} else {
+					this.labelElement.classList.remove('material-label--active')
+				}
+			}
+		}
+
+		customElements.define('material-input', MaterialInput)
 	</script>
 
+	<!-- init -->
 	<script>
-		// the section of own logic code
+		class Tag {
+			constructor(label, color, onDelete) {
+				this.label = label
+				this.color = color
+				this.onDelete = onDelete
+			}
+
+			render() {
+				const tagElement = document.createElement('div')
+				tagElement.textContent = this.label
+				tagElement.classList.add('tag')
+				tagElement.classList.add(this.color)
+
+				const deleteBtn = document.createElement('div')
+				deleteBtn.textContent = 'x'
+				deleteBtn.classList.add('delete-btn')
+				deleteBtn.addEventListener('click', () => {
+					deleteLocal(this.label)
+					this.onDelete(tagElement)
+				})
+
+				tagElement.appendChild(deleteBtn)
+				return tagElement
+			}
+		}
+		const handleDelete = (tagElement) => {
+			tagElement.classList.add('fade-out')
+			setTimeout(() => {
+				// deleteLocal(tagElement.label)
+				tagElement.remove()
+			}, 100)
+		}
+		// use to add tag element inside parent element
+		const parent = document.querySelector('#parent')
+
 		window.addEventListener('DOMContentLoaded', (event) => {
 			// const menuItem = document.querySelector('#menuItem')
 			const foodName = document.querySelector('#foodName')
 			const foodGroup = document.querySelector('#foodGroup')
 
-			const submit = document.querySelector('#submit')
+			const submit = document.querySelector('#confirmModal')
 
 			// init data
 			initItem()
@@ -231,19 +503,20 @@
 
 		// add menuItem to current node and make it storage in local
 		const addMenuItem = (menuItem, itemGroup, isStorage) => {
-			const newItem = document.createElement('span')
-
-			// add the inner text and style to the newly created node
-			newItem.innerHTML = menuItem
-
-			// add the newly created element and its content into the DOM
-			const parentItem = document.querySelector('.parent')
-			parentItem.appendChild(newItem)
-			addBaseStyleForItem(newItem)
+			const tag = new Tag(menuItem, 'primary', handleDelete)
+			parent.appendChild(tag.render())
 
 			// control storage if isStorage
 			if (isStorage) storageLocal(menuItem, itemGroup)
 		}
+
+		// the data-set structure like this
+		// interface data {
+		//     menuItem: {
+		// 		  itemGroup: string
+		// 		  menuItem: string
+		// 	   }
+		//  }
 
 		const storageLocal = (menuItem, itemGroup) => {
 			const existedItem = JSON.parse(localStorage.getItem('menuItem')) || []
@@ -258,25 +531,37 @@
 			// store the updated data back in localStorage
 			localStorage.setItem('menuItem', JSON.stringify(newMenuItem))
 		}
+		const deleteLocal = (menuItem) => {
+			const existedItem = JSON.parse(localStorage.getItem('menuItem')) || []
 
-		// init menuItem basic style from preset class of bootstrap5
-		const addBaseStyleForItem = (newItem) => {
-			newItem.classList.add('badge')
-			newItem.classList.add('text-bg-primary')
-			newItem.classList.add('rounded-pill')
+			// create a new array without deleted element
+			const newData = existedItem.filter(
+				(data) => !data.item.match(`^${menuItem}$`)
+			)
+
+			// store the updated data back in localStorage
+			localStorage.setItem('menuItem', JSON.stringify(newData))
 		}
 	</script>
 
 	<!-- random menuItem -->
 	<script>
 		window.addEventListener('DOMContentLoaded', (event) => {
-			// init
+			const randomFood = document.querySelector('#randomFood')
+			const randomFoodButton = document.querySelector('#randomFoodButton')
+			// const randomMode = localStorage.getItem('randomMode')
+
+			randomFoodButton.addEventListener('click', (event) => {
+				// if (randomMode === 'quick') {
+				randomFood.innerHTML = randomOnItem()
+				// }
+			})
 		})
 
 		// random menuItem depends on single
 		const randomOnItem = () => {
 			const menuItem = JSON.parse(localStorage.getItem('menuItem')) || []
-			const randomNum = getRandomNumber(0, menuItem.length)
+			const randomNum = getRandomNum(0, menuItem.length - 1)
 
 			return menuItem[randomNum].item
 		}
@@ -284,12 +569,12 @@
 		// random menuItem depends on group
 		const randomOnGroup = () => {
 			const menuItem = JSON.parse(localStorage.getItem('menuItem')) || []
-			const randomNum = getRandomNumber(0, menuItem.length)
+			const randomNum = getRandomNumber(0, menuItem.length - 1)
 
 			return menuItem[randomNum].group
 		}
 
-		const getRandomNumber = (min, max) => {
+		const getRandomNum = (min, max) => {
 			// use the crypto.getRandomValues() method for better randomness, which is better than build-in method math.random
 			const randomBytes = new Uint32Array(1)
 			crypto.getRandomValues(randomBytes)
