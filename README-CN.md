@@ -14,7 +14,7 @@
   <h3 align="center">Random Menu</h3>
 
   <p align="center">
-    🍔 Random food menu from local storage on the web browser, All in one file with zero dependencies🍔
+    🍔 以浏览器内置的localStorage为存储媒介实现的随机菜单Web App🍔
     <br />
     <br />
     <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README.md">English</a>
@@ -27,55 +27,53 @@
 <details open>
   <summary>Directory</summary>
   <ul>
-    <li><a href="##Introduction of Project">Introduction of Project</a> </li>
-    <li><a href="##Build With">Build With</a></li>
-    <li><a href="##Build With">Assistant</a></li>
-    <li><a href="##Environment Requirement">Environment Requirement</a></li>
-    <li><a href="##Contributor">Contributor</a></li>
-    <li><a href="##LICENSE">LICENSE</a></li>
+    <li><a href="##Introduction of Project">项目介绍</a> </li>
+    <li><a href="##Build With">技术栈</a></li>
+    <li><a href="##Assistant">协助工具</a></li>
+    <li><a href="##Environment Requirement">运行环境需求</a></li>
+    <li><a href="##Contributor">贡献者</a></li>
+    <li><a href="##LICENSE">开源协议</a></li>
   </ul>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 
-## Introduction of Project
+## 项目介绍
 
 <!-- PROJECT SCREENSHOT -->
 
-What do you prefer to eat today, If you hard to choose try Random-Food-Menu, which is a web application that integrates only HTML/CSS/Native ECMAScript in one file and all data storage in localStorage with zero dependencies.
+通过随机菜单 Web 应用来决定今天吃什么吧！本项目由 HTML/CSS/ECMAScript 和 Claude3 Haiku 生成的代码进行拼接而开发完成，零依赖且数据存储至本地，仅由一个 HTML 文件组成。
 
-<p align="right"> (<a href="#readme-top">back to top</a>)</p>
+<p align="right"> (<a href="#readme-top">回到顶层</a>)</p>
 
-## Build With
+## 技术栈
 
 - HTML
 - CSS
-- ES6+
-- AI Assistant Claude3 Haiku
+- ECMAScript
+- Bootstrap5
 
-## Assistant
+## 协助工具
 
-- Claude3 Haiku
+- Claude3 haiku
 
-This app was developed by Gaomingzhao@Nano through AI prompt. The UI/UX design and code generation were carried out using Claude3 Haiku, and the modularized prompt-generated bugs were ultimately rectified by Nano. The AI tools use experience is not as good as expected, I think AI tools like GPT or something else are more appropriate in certain cases like generating some UI/UX pattern or Obscure functionalities, In this case, I use Claude3 Haiku to generate a clone modal from bootstrap and material style input component etc.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">回到顶层</a>)</p>
 
 <!-- GETTING STARTED -->
 
-## Environment Requirement
+## 运行环境需求
 
-a mobile device equipped with a web browser
+- Chrome 67+
 
-## Contributor
+## 贡献者
 
-The project developed by gaomingzhao666@Nano
+项目由 gaomingzhao666@Nano 开发完成并开源
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">回到顶层</a>)</p>
 
 <!-- LICENSE -->
 
-## LICENSE
+## 开源协议
 
 [MIT License](https://github.com/gaomingzhao666/Random-menu-app/blob/main/LICENSE)
 
