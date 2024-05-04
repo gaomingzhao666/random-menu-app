@@ -29,7 +29,7 @@
   <ul>
     <li><a href="##Introduction of Project">Introduction of Project</a> </li>
     <li><a href="##Build With">Build With</a></li>
-    <li><a href="##Build With">Assistant</a></li>
+    <li><a href="##Assistant">Assistant</a></li>
     <li><a href="##Environment Requirement">Environment Requirement</a></li>
     <li><a href="##Contributor">Contributor</a></li>
     <li><a href="##LICENSE">LICENSE</a></li>
@@ -42,7 +42,7 @@
 
 <!-- PROJECT SCREENSHOT -->
 
-What do you prefer to eat today, If you hard to choose try Random-Food-Menu, which is a web application that integrates only HTML/CSS/Native ECMAScript in one file and all data storage in localStorage with zero dependencies.
+Random-Menu is a wonderful tool that helps you to make a good choice about what stuff to eat today, It is a web application that integrates only HTML/CSS/Native ECMAScript in one file and all data storage in localStorage with zero dependencies.
 
 <p align="right"> (<a href="#readme-top">back to top</a>)</p>
 
@@ -65,7 +65,8 @@ This app was developed by Gaomingzhao@Nano through AI prompt. The UI/UX design a
 
 ## Environment Requirement
 
-a mobile device equipped with a web browser
+- Chrome 123+
+  build-in light-dark mode in CSS3 only supports Chrome123+
 
 ## Contributor
 
