@@ -502,15 +502,17 @@
 		const loadItem = () => JSON.parse(localStorage.getItem('menuItem')) || []
 		const initItem = () => {
 			const noFood = document.querySelector('#noFood')
-			const dataArr = loadItem()
-			if (dataArr.length === 0) {
-				noFood.style.display = 'block'
-			}
+			const randomFoodButton = document.querySelector('#randomFoodButton')
+			const menuItemArr = loadItem()
 
-			if (dataArr.length > 0)
-				dataArr.forEach((element) => {
+			if (menuItemArr.length > 0)
+				menuItemArr.forEach((element) => {
 					addMenuItem(element.item, null, false)
 				})
+			else {
+				noFood.style.display = 'block'
+				randomFoodButton.style.backgroundColor = 'gray'
+			}
 		}
 
 		// add menuItem to current node and make it storage in local
@@ -565,8 +567,10 @@
 			// const randomMode = localStorage.getItem('randomMode')
 
 			randomFoodButton.addEventListener('click', (event) => {
+				const menuItem = localStorage.getItem('menuItem') || []
 				// if (randomMode === 'quick') {
-				randomFood.innerHTML = randomOnItem()
+				if (menuItem.length > 0) randomFood.innerHTML = randomOnItem()
+				else prompt('no food added')
 				// }
 			})
 		})
