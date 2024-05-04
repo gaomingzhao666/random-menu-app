@@ -324,6 +324,17 @@
 			<div id="parent">
 				<!-- Tag component -->
 			</div>
+			<h1
+				id="noFood"
+				style="
+					display: none;
+					text-align: center;
+					font-size: larger;
+					margin-bottom: 12px;
+				"
+			>
+				NO FOOD ADDED
+			</h1>
 		</footer>
 
 		<!-- AI generated modal component -->
@@ -474,7 +485,7 @@
 			// const menuItem = document.querySelector('#menuItem')
 			const foodName = document.querySelector('#foodName')
 			const foodGroup = document.querySelector('#foodGroup')
-
+			const noFood = document.querySelector('#noFood')
 			const submit = document.querySelector('#confirmModal')
 
 			// init data
@@ -492,13 +503,18 @@
 
 		// functionalities own made
 		// load menuItem from localStorage
-		const loadItem = () => JSON.parse(localStorage.getItem('menuItem') || [])
+		const loadItem = () => JSON.parse(localStorage.getItem('menuItem')) || []
 		const initItem = () => {
 			const dataArr = loadItem()
-			// only display foodName on the screen
-			dataArr.forEach((element) => {
-				addMenuItem(element.item, null, false)
-			})
+
+			if (dataArr.length === 0) {
+				noFood.style.display = 'block'
+			}
+
+			if (dataArr.length > 0)
+				dataArr.forEach((element) => {
+					addMenuItem(element.item, null, false)
+				})
 		}
 
 		// add menuItem to current node and make it storage in local
