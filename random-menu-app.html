@@ -10,9 +10,8 @@
 			type="image/x-icon"
 		/>
 
-		<!-- the section of own style code -->
+		<!-- base -->
 		<style>
-			/* base setting */
 			* {
 				margin: 0;
 				padding: 0;
@@ -24,7 +23,10 @@
 				outline: none;
 				text-decoration: none;
 			}
+		</style>
 
+		<!-- style-->
+		<style>
 			/* nav bar component style */
 			header .nav-bar {
 				color: #000;
@@ -91,7 +93,7 @@
 				border: 1px solid #888;
 				width: 80%;
 				max-width: 600px;
-				border-radius: 4px;
+				border-radius: 20px;
 				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 			}
 
@@ -132,6 +134,13 @@
 				padding-top: 1rem;
 				border: none;
 			}
+			.modal-footer button {
+				transition: all 0.3s ease;
+			}
+			.modal-footer button:hover {
+				background-color: rgb(200, 200, 200);
+			}
+
 			.content {
 				padding: 32px;
 				display: flex;
@@ -278,6 +287,24 @@
 					background-color: #f0f0f0;
 					transition: all 0.3s ease;
 				}
+			}
+		</style>
+
+		<!-- covered style setting -->
+		<style>
+			/* chrome 123+ supported dark mode depends on OS setting */
+			:root {
+				color-scheme: light dark;
+			}
+			body {
+				color: light-dark(#000000, #ffffff) !important;
+				background-color: light-dark(#ffffff, #212121) !important;
+			}
+			.card h2 {
+				color: light-dark(#000000, #000000) !important;
+			}
+			.modal {
+				color: light-dark(#000000, #000000) !important;
 			}
 		</style>
 	</head>
