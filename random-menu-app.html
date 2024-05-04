@@ -330,10 +330,10 @@
 					display: none;
 					text-align: center;
 					font-size: larger;
-					margin-bottom: 12px;
+					margin: 24px;
 				"
 			>
-				NO FOOD ADDED
+				NO FOOD ADDED YET
 			</h1>
 		</footer>
 
@@ -478,14 +478,10 @@
 				tagElement.remove()
 			}, 100)
 		}
-		// use to add tag element inside parent element
-		const parent = document.querySelector('#parent')
 
 		window.addEventListener('DOMContentLoaded', (event) => {
-			// const menuItem = document.querySelector('#menuItem')
 			const foodName = document.querySelector('#foodName')
 			const foodGroup = document.querySelector('#foodGroup')
-			const noFood = document.querySelector('#noFood')
 			const submit = document.querySelector('#confirmModal')
 
 			// init data
@@ -505,8 +501,8 @@
 		// load menuItem from localStorage
 		const loadItem = () => JSON.parse(localStorage.getItem('menuItem')) || []
 		const initItem = () => {
+			const noFood = document.querySelector('#noFood')
 			const dataArr = loadItem()
-
 			if (dataArr.length === 0) {
 				noFood.style.display = 'block'
 			}
@@ -519,6 +515,8 @@
 
 		// add menuItem to current node and make it storage in local
 		const addMenuItem = (menuItem, itemGroup, isStorage) => {
+			// use to add tag element inside parent element
+			const parent = document.querySelector('#parent')
 			const tag = new Tag(menuItem, 'primary', handleDelete)
 			parent.appendChild(tag.render())
 
@@ -533,7 +531,6 @@
 		// 		  menuItem: string
 		// 	   }
 		//  }
-
 		const storageLocal = (menuItem, itemGroup) => {
 			const existedItem = JSON.parse(localStorage.getItem('menuItem')) || []
 
