@@ -41,11 +41,6 @@
 				border-radius: 30px;
 				margin: 24px;
 			}
-			@media (min-width: 888px) {
-				header .nav-bar a:hover {
-					background-color: rgb(200, 200, 200);
-				}
-			}
 
 			header .nav-bar a {
 				color: #000;
@@ -61,15 +56,8 @@
 				background-color: white;
 				text-decoration: none;
 				border: none;
-				border-radius: 50px;
-				padding: 2.13vw 3.2vw;
 
 				transition: all 0.3s ease;
-			}
-			@media (min-width: 888px) {
-				.button:hover {
-					background-color: rgb(200, 200, 200);
-				}
 			}
 
 			/* modal component style */
@@ -131,7 +119,7 @@
 			.modal-footer {
 				display: flex;
 				justify-content: flex-end;
-				padding-top: 1rem;
+				padding: 1rem;
 				border: none;
 			}
 			.modal-footer button {
@@ -217,6 +205,7 @@
 				justify-content: space-around;
 				align-items: center;
 			}
+
 			/* tag component style */
 			.tag {
 				display: inline-flex;
@@ -272,6 +261,57 @@
 				transform: scale(0.8);
 			}
 
+			/* toggle component style */
+			.toggle-switch {
+				display: inline-block;
+				position: relative;
+				width: 60px;
+				height: 34px;
+			}
+
+			.toggle-checkbox {
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
+			.toggle-label {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #ccc;
+				-webkit-transition: 0.4s;
+				transition: 0.3s;
+				border-radius: 34px;
+			}
+
+			.toggle-label:before {
+				position: absolute;
+				content: '';
+				height: 26px;
+				width: 26px;
+				left: 4px;
+				bottom: 4px;
+				background-color: white;
+				-webkit-transition: 0.3s;
+				transition: 0.3s;
+				border-radius: 50%;
+			}
+
+			.toggle-checkbox:checked + .toggle-label {
+				background-color: #2196f3;
+			}
+
+			.toggle-checkbox:checked + .toggle-label:before {
+				-webkit-transform: translateX(26px);
+				-ms-transform: translateX(26px);
+				transform: translateX(26px);
+			}
+
+			/* responsive optimization */
 			@media (min-width: 888px) {
 				.tag {
 					display: inline-flex;
@@ -286,6 +326,21 @@
 					color: #333;
 					background-color: #f0f0f0;
 					transition: all 0.3s ease;
+				}
+				.button {
+					border-radius: 50px;
+					padding: 24px 32px;
+				}
+				.submit {
+					border-radius: 50px;
+					padding: 16px;
+				}
+				.button:hover {
+					background-color: rgb(200, 200, 200);
+				}
+
+				header .nav-bar a:hover {
+					background-color: rgb(200, 200, 200);
 				}
 			}
 		</style>
@@ -330,8 +385,7 @@
 					</svg>
 				</a>
 				<button class="button">Nano</button>
-				<!-- <a href="#">Nano</a> -->
-				<button class="button">Setting</button>
+				<button class="button" onclick="toggleOffCanvas()">Setting</button>
 				<button class="button" id="openModal">Add Food</button>
 			</nav>
 		</header>
@@ -348,8 +402,9 @@
 			<h1 style="text-align: center; font-size: larger; margin-bottom: 12px">
 				Added Foods
 			</h1>
+			<!-- AI generated tag component  -->
 			<div id="parent">
-				<!-- Tag component -->
+				<!-- Tag component content-->
 			</div>
 			<h1
 				id="noFood"
@@ -363,6 +418,20 @@
 				NO FOOD ADDED YET
 			</h1>
 		</footer>
+
+		<!-- settings content inside the OffCanvas component -->
+		<off-canvas id="off-canvas">
+			<h2>light-dark mode</h2>
+			<p>
+				This a new feature supported on Chrome 123 and above version, Which is
+				allows website change light-dark mode depends on OS setting.
+			</p>
+			<div class="toggle-switch">
+				<input type="checkbox" class="toggle-checkbox" id="toggle-switch" />
+				<label class="toggle-label" for="toggle-switch"></label>
+			</div>
+			<button class="material-btn">Click me</button>
+		</off-canvas>
 
 		<!-- AI generated modal component -->
 		<div class="modal" id="myModal">
@@ -392,84 +461,11 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button class="button" id="confirmModal">Submit</button>
+					<button class="button submit" id="confirmModal">Submit</button>
 				</div>
 			</div>
 		</div>
 	</body>
-
-	<!-- AI generated modal component logic -->
-	<script>
-		class Modal {
-			constructor() {
-				this.modal = document.getElementById('myModal')
-				this.openButton = document.getElementById('openModal')
-				this.closeButton = document.getElementById('closeModal')
-				this.confirmButton = document.getElementById('confirmModal')
-
-				this.openButton.addEventListener('click', this.open.bind(this))
-				this.closeButton.addEventListener('click', this.close.bind(this))
-				this.confirmButton.addEventListener('click', this.close.bind(this))
-			}
-
-			open() {
-				this.modal.style.display = 'block'
-			}
-
-			close() {
-				this.modal.style.display = 'none'
-			}
-		}
-
-		const modal = new Modal()
-	</script>
-
-	<!-- AI generated input component logic -->
-	<script>
-		class MaterialInput extends HTMLElement {
-			constructor() {
-				super()
-				this.inputElement = null
-				this.labelElement = null
-			}
-
-			connectedCallback() {
-				this.inputElement = this.querySelector('.material-input')
-				this.labelElement = this.querySelector('.material-label')
-
-				this.inputElement.addEventListener(
-					'input',
-					this.handleInputChange.bind(this)
-				)
-				this.inputElement.addEventListener('focus', this.handleFocus.bind(this))
-				this.inputElement.addEventListener('blur', this.handleBlur.bind(this))
-			}
-
-			handleInputChange() {
-				this.toggleLabelTransform()
-			}
-
-			handleFocus() {
-				this.toggleLabelTransform()
-				this.inputElement.classList.add('material-input--focused')
-			}
-
-			handleBlur() {
-				this.toggleLabelTransform()
-				this.inputElement.classList.remove('material-input--focused')
-			}
-
-			toggleLabelTransform() {
-				if (this.inputElement.value.trim() !== '') {
-					this.labelElement.classList.add('material-label--active')
-				} else {
-					this.labelElement.classList.remove('material-label--active')
-				}
-			}
-		}
-
-		customElements.define('material-input', MaterialInput)
-	</script>
 
 	<!-- init -->
 	<script>
@@ -628,5 +624,214 @@
 				Math.floor((randomBytes[0] / (0xffffffff + 1)) * (max - min + 1)) + min
 			)
 		}
+	</script>
+
+	<!-- use of OffCanvas -->
+	<script>
+		const toggleOffCanvas = () => {
+			const offCanvas = document.querySelector('#off-canvas')
+			offCanvas.toggleVisibility()
+		}
+	</script>
+
+	<!-- AI generated modal component logic -->
+	<script>
+		class Modal {
+			constructor() {
+				this.modal = document.getElementById('myModal')
+				this.openButton = document.getElementById('openModal')
+				this.closeButton = document.getElementById('closeModal')
+				this.confirmButton = document.getElementById('confirmModal')
+
+				this.openButton.addEventListener('click', this.open.bind(this))
+				this.closeButton.addEventListener('click', this.close.bind(this))
+				this.confirmButton.addEventListener('click', this.close.bind(this))
+			}
+
+			open() {
+				this.modal.style.display = 'block'
+			}
+
+			close() {
+				this.modal.style.display = 'none'
+			}
+		}
+
+		const modal = new Modal()
+	</script>
+
+	<!-- AI generated input component logic -->
+	<script>
+		class MaterialInput extends HTMLElement {
+			constructor() {
+				super()
+				this.inputElement = null
+				this.labelElement = null
+			}
+
+			connectedCallback() {
+				this.inputElement = this.querySelector('.material-input')
+				this.labelElement = this.querySelector('.material-label')
+
+				this.inputElement.addEventListener(
+					'input',
+					this.handleInputChange.bind(this)
+				)
+				this.inputElement.addEventListener('focus', this.handleFocus.bind(this))
+				this.inputElement.addEventListener('blur', this.handleBlur.bind(this))
+			}
+
+			handleInputChange() {
+				this.toggleLabelTransform()
+			}
+
+			handleFocus() {
+				this.toggleLabelTransform()
+				this.inputElement.classList.add('material-input--focused')
+			}
+
+			handleBlur() {
+				this.toggleLabelTransform()
+				this.inputElement.classList.remove('material-input--focused')
+			}
+
+			toggleLabelTransform() {
+				if (this.inputElement.value.trim() !== '') {
+					this.labelElement.classList.add('material-label--active')
+				} else {
+					this.labelElement.classList.remove('material-label--active')
+				}
+			}
+		}
+
+		customElements.define('material-input', MaterialInput)
+	</script>
+
+	<!-- AI generated OffCanvas component logic -->
+	<script>
+		class OffCanvas extends HTMLElement {
+			constructor() {
+				super()
+				this.isVisible = false
+				this.attachShadow({ mode: 'open' })
+				this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+          z-index: 1000;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        :host([visible]) {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .offcanvas {
+          background-color: #fff;
+          width: 80%;
+          max-width: 320px;
+          height: 100%;
+          box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+          display: flex;
+          flex-direction: column;
+          transform: translateX(100%);
+          transition: transform 0.3s;
+        }
+
+        :host([visible]) .offcanvas {
+          transform: translateX(0);
+        }
+
+        .offcanvas-header {
+          background-color: #3f51b5;
+          color: #fff;
+          padding: 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .offcanvas-header h2 {
+          margin: 0;
+        }
+
+        .offcanvas-close-btn {
+          background-color: transparent;
+          border: none;
+          color: #fff;
+          font-size: 24px;
+          cursor: pointer;
+        }
+
+        .offcanvas-content {
+          padding: 16px;
+          flex-grow: 1;
+          overflow-y: auto;
+        }
+
+        .material-btn {
+          background-color: #3f51b5;
+          color: #fff;
+          border: none;
+          padding: 8px 16px;
+          font-size: 14px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        .material-btn:hover {
+          background-color: #303f9f;
+        }
+      </style>
+
+      <div class="offcanvas">
+        <div class="offcanvas-header">
+          <h2>Settings</h2>
+          <button class="offcanvas-close-btn" aria-label="Close Off-Canvas"></button>
+        </div>
+        <div class="offcanvas-content">
+          <slot></slot>
+        </div>
+      </div>
+    `
+			}
+
+			connectedCallback() {
+				this.shadowRoot
+					.querySelector('.offcanvas-close-btn')
+					.addEventListener('click', this.toggleVisibility.bind(this))
+				this.addEventListener('click', (event) => {
+					if (event.target === this) {
+						this.toggleVisibility()
+					}
+				})
+			}
+
+			disconnectedCallback() {
+				this.shadowRoot
+					.querySelector('.offcanvas-close-btn')
+					.removeEventListener('click', this.toggleVisibility)
+				this.removeEventListener('click', this.toggleVisibility)
+			}
+
+			toggleVisibility() {
+				this.isVisible = !this.isVisible
+				this.toggleAttribute('visible', this.isVisible)
+			}
+		}
+
+		customElements.define('off-canvas', OffCanvas)
 	</script>
 </html>
