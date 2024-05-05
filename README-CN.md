@@ -20,6 +20,8 @@
     <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README.md">English</a>
      <strong> · </strong>
     <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README-CN.md">简体中文</a>
+     <strong> · </strong>
+    <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README-JP.md">日本語</a>
   </p>
 </div>
 
@@ -27,12 +29,12 @@
 <details open>
   <summary>Directory</summary>
   <ul>
-    <li><a href="##Introduction of Project">项目介绍</a> </li>
-    <li><a href="##Build With">技术栈</a></li>
-    <li><a href="##Assistant">协助工具</a></li>
-    <li><a href="##Environment Requirement">运行环境需求</a></li>
-    <li><a href="##Contributor">贡献者</a></li>
-    <li><a href="##LICENSE">开源协议</a></li>
+    <li><a href="#项目介绍">项目介绍</a> </li>
+    <li><a href="#技术栈">技术栈</a></li>
+    <li><a href="#协助工具">协助工具</a></li>
+    <li><a href="#运行环境需求">运行环境需求</a></li>
+    <li><a href="#贡献者">贡献者</a></li>
+    <li><a href="#开源协议">开源协议</a></li>
   </ul>
 </details>
 

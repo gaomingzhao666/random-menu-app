@@ -20,6 +20,7 @@
     <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README.md">English</a>
      <strong> · </strong>
     <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README-CN.md">简体中文</a>
+     <strong> · </strong>
     <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README-JP.md">日本語</a>
   </p>
 </div>
@@ -28,12 +29,12 @@
 <details open>
   <summary>Directory</summary>
   <ul>
-    <li><a href="##プロジェクトの概要">プロジェクトの概要</a> </li>
-    <li><a href="##技術の使いの方">技術の使いの方</a></li>
-    <li><a href="##AI顧問">AI顧問</a></li>
-    <li><a href="##環境要件">環境要件</a></li>
-    <li><a href="##貢獻者">貢獻者</a></li>
-    <li><a href="##オープンソース契約">オープンソース契約</a></li>
+    <li><a href="#プロジェクトの概要">プロジェクトの概要</a> </li>
+    <li><a href="#技術の使いの方">技術の使いの方</a></li>
+    <li><a href="#ai-顧問">AI顧問</a></li>
+    <li><a href="#環境要件">環境要件</a></li>
+    <li><a href="#貢獻者">貢獻者</a></li>
+    <li><a href="#オープンソース契約">オープンソース契約</a></li>
   </ul>
 </details>
 

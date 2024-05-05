@@ -17,9 +17,11 @@
     🍔 Random food menu from local storage on the web browser, All in one file with zero dependencies🍔
     <br />
     <br />
-    <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README.md">English</a>
+    <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README.md"> English </a>
      <strong> · </strong>
-    <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README-CN.md">简体中文</a>
+    <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README-CN.md"> 简体中文 </a>
+     <strong> · </strong>
+    <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README-JP.md"> 日本語 </a>
   </p>
 </div>
 
@@ -27,12 +29,12 @@
 <details open>
   <summary>Directory</summary>
   <ul>
-    <li><a href="##Introduction of Project">Introduction of Project</a> </li>
-    <li><a href="##Build With">Build With</a></li>
-    <li><a href="##Assistant">Assistant</a></li>
-    <li><a href="##Environment Requirement">Environment Requirement</a></li>
-    <li><a href="##Contributor">Contributor</a></li>
-    <li><a href="##LICENSE">LICENSE</a></li>
+    <li><a href="#introduction-of-project">Introduction of Project</a> </li>
+    <li><a href="#build-with">Build With</a></li>
+    <li><a href="#assistant">Assistant</a></li>
+    <li><a href="#environment-requirement">Environment Requirement</a></li>
+    <li><a href="#contributor">Contributor</a></li>
+    <li><a href="#license">LICENSE</a></li>
   </ul>
 </details>
 
