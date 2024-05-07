@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-bs-theme="isDark">
+<html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +22,16 @@
 				font-size: medium;
 				outline: none;
 				text-decoration: none;
+			}
+			.text-secondary {
+				color: grey;
+				font-size: small;
+				margin: 6px 1px;
+			}
+			.d-flex-center {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 			}
 		</style>
 
@@ -252,11 +262,6 @@
 				cursor: pointer;
 				transition: all 0.3s ease;
 			}
-
-			.tag .delete-btn:hover {
-				background-color: rgba(0, 0, 0, 0.1);
-			}
-
 			.tag .delete-btn:active {
 				transform: scale(0.8);
 			}
@@ -267,6 +272,9 @@
 				position: relative;
 				width: 60px;
 				height: 34px;
+
+				/* for resize the container but no effect original style */
+				transform: scale(0.8);
 			}
 
 			.toggle-checkbox {
@@ -283,9 +291,11 @@
 				right: 0;
 				bottom: 0;
 				background-color: #ccc;
-				-webkit-transition: 0.4s;
+				-webkit-transition: 0.3s;
 				transition: 0.3s;
 				border-radius: 34px;
+
+				background-color: #2196f3;
 			}
 
 			.toggle-label:before {
@@ -299,15 +309,7 @@
 				-webkit-transition: 0.3s;
 				transition: 0.3s;
 				border-radius: 50%;
-			}
 
-			.toggle-checkbox:checked + .toggle-label {
-				background-color: #2196f3;
-			}
-
-			.toggle-checkbox:checked + .toggle-label:before {
-				-webkit-transform: translateX(26px);
-				-ms-transform: translateX(26px);
 				transform: translateX(26px);
 			}
 
@@ -359,6 +361,17 @@
 				color: light-dark(#000000, #000000) !important;
 			}
 			.modal {
+				color: light-dark(#000000, #000000) !important;
+			}
+			.light {
+				/* forces light color-scheme */
+				color-scheme: light;
+			}
+			.dark {
+				/* forces dark color-scheme */
+				color-scheme: dark;
+			}
+			.settingTitle {
 				color: light-dark(#000000, #000000) !important;
 			}
 		</style>
@@ -421,16 +434,28 @@
 
 		<!-- settings content inside the OffCanvas component -->
 		<off-canvas id="off-canvas">
-			<h2>light-dark mode</h2>
-			<p>
-				This a new feature supported on Chrome 123 and above version, Which is
-				allows website change light-dark mode depends on OS setting.
-			</p>
-			<div class="toggle-switch">
-				<input type="checkbox" class="toggle-checkbox" id="toggle-switch" />
-				<label class="toggle-label" for="toggle-switch"></label>
+			<div class="d-flex-center">
+				<h2 class="settingTitle">Dark Mode - OS default</h2>
+				<div
+					class="toggle-switch"
+					id="toggle"
+					onclick="onToggle()"
+					condition=""
+				>
+					<input
+						type="checkbox"
+						class="toggle-checkbox"
+						id="toggle-switch"
+						disabled
+					/>
+					<label class="toggle-label" for="toggle-switch"></label>
+				</div>
 			</div>
-			<button class="material-btn">Click me</button>
+			<!-- desc -->
+			<p class="text-secondary">
+				This a new feature supported on Chrome 123+, Which is allows website
+				change light-dark mode depends on Operating System.
+			</p>
 		</off-canvas>
 
 		<!-- AI generated modal component -->
