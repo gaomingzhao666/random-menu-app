@@ -14,7 +14,7 @@
   <h3 align="center">Random Menu</h3>
 
   <p align="center">
-    🍔 Random food menu from local storage on the web browser, All in one file with zero dependencies🍔
+    🍔 Random food menu from local storage on the web browser, All in one file with zero dependencies 🍔
     <br />
     <br />
     <a href="https://github.com/gaomingzhao666/random-menu-app/blob/master/README.md"> English </a>

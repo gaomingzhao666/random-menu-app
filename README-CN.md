@@ -27,7 +27,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open>
-  <summary>Directory</summary>
+  <summary>索引</summary>
   <ul>
     <li><a href="#项目介绍">项目介绍</a> </li>
     <li><a href="#技术栈">技术栈</a></li>

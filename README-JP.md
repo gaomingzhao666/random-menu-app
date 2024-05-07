@@ -27,7 +27,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open>
-  <summary>Directory</summary>
+  <summary>索引</summary>
   <ul>
     <li><a href="#プロジェクトの概要">プロジェクトの概要</a> </li>
     <li><a href="#技術の使いの方">技術の使いの方</a></li>
