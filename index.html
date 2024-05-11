@@ -511,6 +511,7 @@
 				deleteBtn.textContent = 'x'
 				deleteBtn.classList.add('delete-btn')
 				deleteBtn.addEventListener('click', () => {
+					isNoFoodEffect()
 					deleteLocal(this.label)
 					this.onDelete(tagElement)
 				})
@@ -565,6 +566,8 @@
 
 		// add menuItem to current node and make it storage in local
 		const addMenuItem = (menuItem, itemGroup, isStorage) => {
+			isNoFoodEffect()
+
 			// use to add tag element inside parent element
 			const parent = document.querySelector('#parent')
 			const tag = new Tag(menuItem, 'primary', handleDelete)
@@ -604,6 +607,20 @@
 
 			// store the updated data back in localStorage
 			localStorage.setItem('menuItem', JSON.stringify(newData))
+		}
+		const isNoFoodEffect = () => {
+			const noFood = document.querySelector('#noFood')
+			const randomFoodButton = document.querySelector('#randomFoodButton')
+
+			const isHaveFood =
+				localStorage.getItem('menuItem').length > 0 ? true : false
+			if (isHaveFood) {
+				noFood.style.display = 'none'
+				randomFoodButton.style.backgroundColor = '#2196f3'
+			} else {
+				noFood.style.display = 'block'
+				randomFoodButton.style.backgroundColor = 'gray'
+			}
 		}
 	</script>
 
