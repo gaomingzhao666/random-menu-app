@@ -44,6 +44,11 @@
 
 <!-- PROJECT SCREENSHOT -->
 
+<p align="left" width="100%">
+    <img src="/screenshot/index.png">
+</p>
+<!-- ![SCREENSHOT](/screenshot/index.png) -->
+
 Random-Menu is a wonderful tool that helps you to make a good choice about what stuff to eat today, It is a web application that integrates only HTML/CSS/Native ECMAScript in one file and all data storage in localStorage with zero dependencies.
 
 <p align="right"> (<a href="#readme-top">back to top</a>)</p>
