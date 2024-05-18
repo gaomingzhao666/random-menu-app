@@ -44,6 +44,10 @@
 
 <!-- PROJECT SCREENSHOT -->
 
+<p align="center">
+    <img src="/screenshot/index.png">
+</p>
+
 このアプリは、今日何を食べるかを適切に選択するのに役立つ素晴なツールです。これは、HTML/CSS/ネイティブ ECMAScript のみを 1 つのファイルに統合し、すべてのデータ ストレージを依存関係なしで localStorage に統合する ウェブアプリケーションです。
 
 <p align="right"> (<a href="#readme-top">トップに戻る</a>)</p>

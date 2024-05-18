@@ -44,6 +44,10 @@
 
 <!-- PROJECT SCREENSHOT -->
 
+<p align="center">
+    <img src="/screenshot/index.png">
+</p>
+
 通过随机菜单 Web 应用来决定今天吃什么吧！本项目由 HTML/CSS/ECMAScript 和 Claude3 Haiku 生成的代码进行拼接而开发完成，零依赖且数据存储至本地，仅由一个 HTML 文件组成。
 
 <p align="right"> (<a href="#readme-top">回到顶层</a>)</p>

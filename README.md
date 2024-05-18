@@ -44,7 +44,7 @@
 
 <!-- PROJECT SCREENSHOT -->
 
-<p align="left" width="100%">
+<p align="center">
     <img src="/screenshot/index.png">
 </p>
 <!-- ![SCREENSHOT](/screenshot/index.png) -->
