@@ -47,9 +47,9 @@
 <p align="center">
     <img src="/screenshot/index.png">
 </p>
-<!-- ![SCREENSHOT](/screenshot/index.png) -->
 
 Random-Menu is a wonderful tool that helps you to make a good choice about what stuff to eat today, It is a web application that integrates only HTML/CSS/Native ECMAScript in one file and all data storage in localStorage with zero dependencies.
+This project is a other kind of TODO-list, I'm prefer to make some diffrent with other guys. 
 
 <p align="right"> (<a href="#readme-top">back to top</a>)</p>
 
@@ -64,7 +64,7 @@ Random-Menu is a wonderful tool that helps you to make a good choice about what 
 
 - Claude3 Haiku
 
-This app was developed by Gaomingzhao@Nano through AI prompt. The UI/UX design and code generation were carried out using Claude3 Haiku, and the modularized prompt-generated bugs were ultimately rectified by Nano. The AI tools use experience is not as good as expected, I think AI tools like GPT or something else are more appropriate in certain cases like generating some UI/UX pattern or Obscure functionalities, In this case, I use Claude3 Haiku to generate a clone modal from bootstrap and material style input component etc.
+In this case, I used Claude3 Haiku to generatied UI/UX design and component like `modal` `input` and `buttons`, and I wrote the modularized the modularized scripts and logic functionalities.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
