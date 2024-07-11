@@ -641,7 +641,7 @@
 				const menuItem = localStorage.getItem('menuItem') || []
 				// if (randomMode === 'quick') {
 				if (menuItem.length > 0) randomFood.innerHTML = randomOnItem()
-				else prompt('no food added')
+				else alert('no food added, you should add food first can get random food')
 				// }
 			})
 		})
